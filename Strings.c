@@ -7,7 +7,7 @@
 //write a program to reverse  a line
 
 int main()
-{ /*  
+{  
     char *p1;
     char s1[100];
     printf("enter the string\n");
@@ -57,7 +57,7 @@ int main()
             printf("%s ", &(p6[i]) +1 );  //and prints the string after null
          }
     }
-    printf("%s", p6);*/
+    printf("%s", p6);
 
     void deletePos(char a[],int pos,int len)
     {
