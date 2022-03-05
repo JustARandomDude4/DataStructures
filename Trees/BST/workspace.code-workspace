@@ -1,0 +1,19 @@
+{
+	"folders": [
+		{
+			"path": "..\\..\\..\\CoreJavaPractice"
+		},
+		{
+			"path": "..\\..\\..\\HimaSatwikaKatragaddaPortfolio.github.io"
+		},
+		{
+			"path": "..\\.."
+		}
+	],
+	"settings": {
+		"java.project.referencedLibraries": [
+			"lib/**/*.jar",
+			"c:\\Users\\DELL\\coolCat.jpg"
+		]
+	}
+}
