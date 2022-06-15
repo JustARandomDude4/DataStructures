@@ -24,6 +24,24 @@ void linkedlistTraversal(struct Node *ptr)
     }
 
 }
+struct Node * RemoveDuplicates(struct Node *head)
+{
+    struct node *t;
+    struct Node *cur=head;
+    while(cur->next !=NULL)
+    {
+        if(cur->data==cur->next->data)
+        {
+            t=cur->next;
+            cur->next = cur->next->next;
+            free(t);
+        }
+        
+        else
+        cur=cur->next;
+    }
+    return head;
+}
 
 int main()
 {
