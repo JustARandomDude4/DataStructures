@@ -25,9 +25,10 @@ while(headA!=NULL && headB!=NULL)
 void linkedlistTraversal(struct Node *ptr)
 {   while(ptr != NULL)
     {
-        printf("%d \n",ptr->data);
+        printf("%d ",ptr->data);
         ptr=ptr->next;
     }
+    printf("\n");
 
 }
 int main()
@@ -56,7 +57,7 @@ int main()
     fourth->data=10;
     fourth->next=NULL; 
     linkedlistTraversal(head);
-     DetectCycle(head);
+    CompareLists(head,head);
     linkedlistTraversal(head);
 
    
