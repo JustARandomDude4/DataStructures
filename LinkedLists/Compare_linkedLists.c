@@ -25,10 +25,9 @@ while(headA!=NULL && headB!=NULL)
 void linkedlistTraversal(struct Node *ptr)
 {   while(ptr != NULL)
     {
-        printf("%d ",ptr->data);
+        printf("%d \n",ptr->data);
         ptr=ptr->next;
     }
-    printf("\n");
 
 }
 int main()

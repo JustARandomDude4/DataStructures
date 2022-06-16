@@ -5,7 +5,7 @@ struct Node
 {
     int data;
     struct Node *next;
-};
+}Node;
 
 struct Node* insertAtFirst(struct Node *head,int data)
 {
