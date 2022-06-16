@@ -99,8 +99,8 @@ int main()
     fourth->data = 4;
     printf("Dobly Linked list transversal\n");
     DLLTraversal(head);
-    head = DLLInsetionAtStart(head, 12);]
-      DLLTraversal(head);
+    head = DLLInsetionAtStart(head, 12);
+    DLLTraversal(head);
 
     return 0;
 }

@@ -2,6 +2,7 @@
     "files.associations": {
         "array": "c",
         "string": "c",
-        "string_view": "c"
+        "string_view": "c",
+        "Sinlge_Source_ShorteST_PATH.C": "cpp"
     }
 }
