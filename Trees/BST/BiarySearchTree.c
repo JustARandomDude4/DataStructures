@@ -44,6 +44,15 @@ int isBST(struct node* root)   //root -> left -> right
     }
     else{return 1;}   //an empty tree is a bst so return 1
 }
+int height(struct node *root)
+{
+    if(root)
+    return max(height(root->left),height(root->right))+1;
+    else
+    return -1;
+}
+
+
 
 
 struct node* search(struct node* root,int key)
@@ -111,6 +120,25 @@ struct node* delete(struct node* root, int v)
     return root;
     
 }
+int isIdentical(struct node* root1,struct node* root2)
+{
+    // Check if both the trees are empty
+    if (root1 == NULL && root2 == NULL)
+        return 1;
+
+    // If any one of the tree is non-empty  and other is empty, return false
+    else if (root1 == NULL || root2 == NULL)
+        return 0;
+
+// Check if current data of both trees equal             // and recursively check for left and right subtrees
+    else 
+    { 
+        if (root1->data == root2->data && isIdentical(root1->left, root2->left) && isIdentical(root1->right, root2->right))
+            return 1;
+        else
+            return 0;
+    }
+}
 
 int main()
 {
@@ -151,5 +179,11 @@ int main()
 
     printf("\n");
     inorder(p);
+
+    if (isIdentical(p, p))
+        printf( "Both BSTs are identical");
+    else
+        printf("BSTs are not identical") ;
     return 0;
+
 }
