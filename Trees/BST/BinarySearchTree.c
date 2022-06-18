@@ -1,3 +1,10 @@
+/* Total number of possible Binary Search Trees with n different keys (countBST(n)) = Catalan number Cn = (2n)! / ((n + 1)! * n!)
+
+For n = 0, 1, 2, 3, … values of Catalan numbers are 1, 1, 2, 5, 14, 42, 132, 429, 1430, 4862, … So are numbers of Binary Search Trees.
+
+Total number of possible Binary Trees with n different keys (countBT(n)) = countBST(n) * n! 
+*/
+
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -140,6 +147,20 @@ int isIdentical(struct node* root1,struct node* root2)
     }
 }
 
+struct node * find_max(struct node * root)
+{
+    if(root== NULL)
+    {
+        return NULL;
+    }
+    else if(root->right==NULL)
+        return root;
+    else return find_max(root->right);
+
+}
+    
+
+
 int main()
 {
     struct node* p=createNode(5);
@@ -170,7 +191,7 @@ int main()
 
     struct node* m=searchIter(p,10);
     if(m!=NULL)  {printf("element found");}
-    else         {printf("\nelement not found");}
+    else         {printf("\nelement not found");}   
 
     printf("\n");
     inorder(p);
