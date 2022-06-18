@@ -62,7 +62,13 @@ int height(struct node *root)
 
 
 
-
+struct node* search(struct node* root,int key)
+{
+    if(root==NULL)             return(NULL);
+    if(root->data==key)        return root;
+    else if(root->data > key)  return search(root->left,key);
+    else                       return search(root->right,key);
+}
 
 struct node* searchIter(struct node* root,int key)
 {
