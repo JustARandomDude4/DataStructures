@@ -10,10 +10,10 @@ struct Node
 	int height;
 };
 
-// A utility function to get maximum of two integers
+// A utility func to get max of two integers
 int max(int a, int b);
 
-// A utility function to get the height of the tree
+// A utility func to get the height of the tree
 int height(struct Node *N)
 {
 	if (N == NULL)
@@ -21,14 +21,13 @@ int height(struct Node *N)
 	return 1+max(height(N->left), height(N->right));
 }
 
-// A utility function to get maximum of two integers
+// A utility func to get max of two integers
 int max(int a, int b)
 {
 	return (a > b)? a : b;
 }
 
-/* Helper function that allocates a new node with the given key and
-	NULL left and right pointers. */
+/* Helper func that allocates a new node with the given key and	NULL left and right pointers. */
 struct Node* newNode(int key)
 {
 	struct Node* node = (struct Node*)
@@ -40,8 +39,7 @@ struct Node* newNode(int key)
 	return(node);
 }
 
-// A utility function to right rotate subtree rooted with y
-// See the diagram given above.
+// A utility func to right rotate subtree rooted with y
 struct Node *rightRotate(struct Node *y)
 {
 	struct Node *x = y->left;
@@ -59,8 +57,7 @@ struct Node *rightRotate(struct Node *y)
 	return x;
 }
 
-// A utility function to left rotate subtree rooted with x
-// See the diagram given above.
+// A utility func to left rotate subtree rooted with x.
 struct Node *leftRotate(struct Node *x)
 {
 	struct Node *y = x->right;
@@ -87,7 +84,7 @@ int getBalance(struct Node *N)
 }
 
 
-// Recursive function to insert a key in the subtree rooted
+// Recursive func to insert a key in the subtree rooted
 // with node and returns the new root of the subtree.
 struct Node* insert(struct Node* node, int key)
 {
@@ -136,7 +133,7 @@ struct Node* insert(struct Node* node, int key)
 	return node;
 }
 
-// A utility function to print preorder traversal of the tree, also prints height of every node
+// A utility func to print preorder traversal of the tree, also prints height of every node
 void preOrder(struct Node *root)
 {
 	if(root != NULL)
@@ -147,7 +144,7 @@ void preOrder(struct Node *root)
 	}
 }
 
-/* Driver program to test above function*/
+/* Driver prg to test above func*/
 int main()
 {
 struct Node *root = NULL;
