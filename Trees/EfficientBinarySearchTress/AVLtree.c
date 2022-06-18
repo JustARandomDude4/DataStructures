@@ -78,7 +78,7 @@ struct Node *leftRotate(struct Node *x)
 	return y;
 }
 
-// Get Balance factor of node N
+// Get Balance factor
 int getBalance(struct Node *N)
 {
 	if (N == NULL)
@@ -165,11 +165,11 @@ root = insert(root, 50);
 root = insert(root, 25);
 
 /* The constructed AVL Tree would be
-			30
+		30
 		/ \
-		20 40
-		/ \	 \
-	10 25 50
+	   20 40
+	  / \	\
+	10   25  50
 */
 
 printf("Preorder traversal of the constructed AVL"
