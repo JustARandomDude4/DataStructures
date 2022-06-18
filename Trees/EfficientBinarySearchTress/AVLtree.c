@@ -86,6 +86,7 @@ int getBalance(struct Node *N)
 	return height(N->left) - height(N->right);
 }
 
+
 // Recursive function to insert a key in the subtree rooted
 // with node and returns the new root of the subtree.
 struct Node* insert(struct Node* node, int key)
@@ -101,33 +102,30 @@ struct Node* insert(struct Node* node, int key)
 	else // Equal keys are not allowed in BST
 		return node;
 
-	/* 2. Update height of this ancestor node */
+/* 2. Update height of this ancestor node */
 	node->height = height(node);
 
-	/* 3. Get the balance factor of this ancestor
-		node to check whether this node became
-		unbalanced */
+/* 3. Get the balance factor of this ancestor node to check whether this node became unbalanced */
 	int balance = getBalance(node);
 
-	// If this node becomes unbalanced, then
-	// there are 4 cases
+	// If this node becomes unbalanced, then there are 4 cases
 
-	// Left Left Case
+	// LL Case
 	if (balance > 1 && key < node->left->key)
 		return rightRotate(node);
 
-	// Right Right Case
+	// RR Case
 	if (balance < -1 && key > node->right->key)
 		return leftRotate(node);
 
-	// Left Right Case
+	// LR Case
 	if (balance > 1 && key > node->left->key)
 	{
 		node->left = leftRotate(node->left);
 		return rightRotate(node);
 	}
 
-	// Right Left Case
+	// RL Case
 	if (balance < -1 && key < node->right->key)
 	{
 		node->right = rightRotate(node->right);
@@ -138,9 +136,7 @@ struct Node* insert(struct Node* node, int key)
 	return node;
 }
 
-// A utility function to print preorder traversal
-// of the tree.
-// The function also prints height of every node
+// A utility function to print preorder traversal of the tree, also prints height of every node
 void preOrder(struct Node *root)
 {
 	if(root != NULL)
