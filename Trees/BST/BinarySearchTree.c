@@ -60,8 +60,6 @@ int height(struct node *root)
 }
 
 
-
-
 struct node* search(struct node* root,int key)
 {
     if(root==NULL)             return(NULL);
