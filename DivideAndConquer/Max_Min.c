@@ -13,7 +13,7 @@ int Max(int *arr, int ele1,int ele2,int max)
         
     }
     
-    if(ele1+1==ele2 )    // if there are  2 elements  (base condition 1)
+    else if(ele1+1==ele2 )    // if there are  2 elements  (base condition 1)
     {
         if (arr[ele1]>arr[ele2])   {  max=arr[ele1];  return max; }
     
