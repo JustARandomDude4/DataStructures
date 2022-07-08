@@ -1,4 +1,4 @@
-#include <stdio.h>
+//#include <stdio.h>
 
 //input : total obj, knapsack cap , weights, profits
 //output : total value
@@ -16,7 +16,7 @@ void sort(double * pByw,int *w, int* p,int n)  //selection sort
                   pByw[j]=pByw[maxIndex];
                   pByw[maxIndex]=temp;
                   
-                  temp=w[j    //arranging weights wrt pByw
+                  temp=w[j];  //arranging weights wrt pByw
                   w[j]=w[maxIndex];
                   w[maxIndex]=temp;
                   
