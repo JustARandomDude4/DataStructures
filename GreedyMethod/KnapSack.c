@@ -16,11 +16,11 @@ void sort(double * pByw,int *w, int* p,int n)  //selection sort
                   pByw[j]=pByw[maxIndex];
                   pByw[maxIndex]=temp;
                   
-                  temp=w[j];
+                  temp=w[j    //arranging weights wrt pByw
                   w[j]=w[maxIndex];
                   w[maxIndex]=temp;
                   
-                  temp=p[j];
+                  temp=p[j];  //arranging profits wrt pByw
                   p[j]=p[maxIndex];
                   p[maxIndex]=temp;
               }
