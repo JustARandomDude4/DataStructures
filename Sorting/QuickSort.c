@@ -1,6 +1,6 @@
 // Partition methods can be differnt
 // I wrote 2 differnt partition methods as 2 differnt prgs
-#include <stdio.h>
+//#include <stdio.h>
 
 void quickSort(arr,start,end)
 {
@@ -12,39 +12,36 @@ void quickSort(arr,start,end)
     quickSort(arr,index+1,end);
 }
 
-int partition(arr,start,end)
+int partition1(int *arr,int start,int end)
 {
-    pivotIndex=start;// pivot index is where pivot havve to placced so that evtg left of it is less and rt is more
-    pivotValue=arr[end];   //pivot can be started with anything tho
+
+    int pivotIndex=start;// pivot index is where pivot havve to placced so that evtg left of it is less and rt is more
+    int pivotValue=arr[end];   //pivot can be started with anything tho
     //we now compare every element with 5 
     for(int i=start;i<end;i++)
     {
-        if arr[pivotIndex]<pivotValue
+        if (arr[pivotIndex]<pivotValue)
         {
-            swap(arr,i,pivotIndex);
+            //swap(arr,i,pivotIndex);
             pivotIndex++;
         }
     }
     return pivotIndex;
 }
-int main()
-{
-
-}
 
 
 
 //#include <stdio.h>
-/*
+
 void swap(int * a, int* b)
 {
     int  temp=*a;
     *a=*b;
     *b=temp;
-} */
+} 
 /* This function takes last element as pivot, places the pivot element at its correct position in sorted
 array, and places all smaller than pivot)to left of pivot and all greater elements to right of pivot */
-/*
+
 int partition(int *arr,int left,int right)
 {
     int i=left;   
@@ -101,4 +98,4 @@ int main()
   return 0;  
 }
 
-*/
+

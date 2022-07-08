@@ -21,6 +21,7 @@ int * MergeSortedArrays(int *array,int *arr1,int *arr2,int n,int n1,int n2)
             j++;
         }
     }
+// Add the remaining elements
     while(i<n1)
     {
         array[k]=arr1[i];

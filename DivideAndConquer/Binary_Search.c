@@ -1,4 +1,4 @@
-#include <stdio.h>
+//#include <stdio.h>
 
 // input = [1,2,3,4,5,8] , 7
 //output = element not found
