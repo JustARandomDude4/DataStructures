@@ -1,10 +1,13 @@
-#include <stdio.h>
+//#include <stdio.h>
 void swap(int * a, int* b)
 {
     int  temp=*a;
     *a=*b;
     *b=temp;
 }
+/* This function takes last element as pivot, places the pivot element at its correct position in sorted
+array, and places all smaller than pivot)to left of pivot and all greater elements to right of pivot */
+
 int partition(int *arr,int left,int right)
 {
     int i=left;   
@@ -39,6 +42,7 @@ void QuickSort(int arr[],int left,int right)
     if (left<right)
     {
         pivotIndex=partition(arr,left,right);
+        // Separately sort elements before and after pivot
         QuickSort(arr,left,pivotIndex);
         QuickSort(arr,pivotIndex+1,right);
     }
