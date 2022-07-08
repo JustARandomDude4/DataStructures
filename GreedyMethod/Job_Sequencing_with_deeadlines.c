@@ -1,4 +1,4 @@
-#include <stdio.h>
+//#include <stdio.h>
 
 //input : total jobs, profits in decreasing order , deadlines
 //output : sequence of jobs
@@ -6,10 +6,11 @@
 int maxDeadline(int *a,int n)  // Finds the highest deadline available in the input to allot the slots
 {
     int max=a[0];
+
     for(int i=1;i<n;i++)
-    if(a[i]>max)
-     max=a[i];
-         printf("%d",max);
+        if(a[i]>max)
+           max=a[i];
+
     return max;
 }
 int AllotSlot(int * slots,int deadLine, int JobNo)   // checks whether a free slot is available or not, if yes, then allots it tot the current Job
