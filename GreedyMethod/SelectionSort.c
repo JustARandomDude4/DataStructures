@@ -1,4 +1,5 @@
-#//include <stdio.h>
+//Greedy criteria : Min element for every iteration adn swap comparision
+//#include <stdio.h>
 void swap(int *a,int *b)
 {
     int temp=*a;
