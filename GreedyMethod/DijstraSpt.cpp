@@ -2,7 +2,7 @@
 using namespace std;
 #define nV 9
 #define INF 9999
-int  findMinKeyIndex(int * dist,bool * sptSet)
+int  findMinDistIndex(int * dist,bool * sptSet)
 {
     int min=INF, minIndex;
     
@@ -19,9 +19,8 @@ void updatedist(int *dist,int u,int graph[nV][nV], bool *sptSet)
 {
        for (int v = 0; v < nV; v++)
  
-            // Update dist[v] only if is not in sptSet, there is an edge from
-            // u to v, and total weight of path from src to  v through u is
-            // smaller than current value of dist[v]
+// Update dist[v] only if is not in sptSet, there is an edge from u to v, and total weight of path from src to  v through u is
+// smaller than current value of dist[v]
             if (!sptSet[v] && graph[u][v] && dist[u] != INF
                 && dist[u] + graph[u][v] < dist[v])
                 dist[v] = dist[u] + graph[u][v];
@@ -44,13 +43,13 @@ void spt(int graph[nV][nV],int src)
     
     for(int i=0;i<nV-1;i++)   // until all vertices are covered
     {
-      int minKeyIndex=findMinKeyIndex(dist,sptSet);   //find the min Key 
-      sptSet[minKeyIndex]=true;                     // now add that vertex to sptSet
-      updatedist(dist,minKeyIndex,graph,sptSet);            // update the dist of adjacent vertexes of min Key Vertex
+      int minDistIndex=findMinDistIndex(dist,sptSet);   //find the min Key 
+      sptSet[minDistIndex]=true;                     // now add that vertex to sptSet
+      updatedist(dist,minDistIndex,graph,sptSet);            // update the dist of adjacent vertexes of min Key Vertex
       
     }
     
-    // Now print the mst edges
+    // Now print the spt edges
     
          cout <<"Vertex \t Distance from Source" << endl;
         for (int i = 0; i < nV; i++)
@@ -61,14 +60,6 @@ void spt(int graph[nV][nV],int src)
 }
 int main()
 {
-    /* Let us create the following graph
-        2    3
-    (0)--(1)--(2)
-    | / \ |
-    6| 8/ \5 |7
-    | / \ |
-    (3)-------(4)
-         9         */
     
     int graph[nV][nV] = { { 0, 4, 0, 0, 0, 0, 0, 8, 0 },
                         { 4, 0, 8, 0, 0, 0, 0, 11, 0 },

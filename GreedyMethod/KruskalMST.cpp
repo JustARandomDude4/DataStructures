@@ -1,7 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
-// DSU data structure
-//  path compression + rank by union
+// DSU data structure //  path compression + rank by union
  
 class DSU {
     int* parent;
