@@ -30,8 +30,8 @@ int fibT(int n)
     int F[n];
     for(int i=0;i<n;i++)
     {
-        if (i==0 || i==1)
-        F[i]=1;
+        if (i<=1)
+        F[i]=i;
         
         else
         F[i]=F[i-1]+F[i-2];
