@@ -2,42 +2,40 @@
 
 // input = [1,2,8,23,4,9,3]
 //output : Max : 23   Min : 1
+#include <iostream>
 
-int Max(int *arr, int ele1,int ele2,int max)
+using namespace std;
+int Max(int* a, int i, int j)
 {
-    int a,b,mid;
+    if(i==j)
+            return a[i];
     
-    if(ele1==ele2)      // one element left
-    { 
-        max=arr[ele1]; return max; 
-        
-    }
-    
-    else if(ele1+1==ele2 )    // if there are  2 elements  (base condition 1)
+    else if(i+1==j)
     {
-        if (arr[ele1]>arr[ele2])   {  max=arr[ele1];  return max; }
-    
-        else             {   max=arr[ele2];  return max;}
+        if(a[i]>=a[j])
+            return a[i];
+        else
+            return a[j];
     }
-    
-    else                 //if there are >2 elements left  (divide)
+    else
     {
-        mid=(ele1+ele2)/2;
+        int mid=(i+j)/2;
         
-        a=Max(arr,ele1,mid,max);
-        
-        b=Max(arr,mid+1,ele2,max);
-        
-
-         if (a>b)  {return a;}
-        
-         else    {return b;}
+        int x=Max(a, i, mid);
+    
+        int y=Max(a,mid+1,j);
+    
+        if(x>y)
+           return x;
+        else
+           return y;
     }
 }
-
 int main()
 {
-    int arr[]={1,2,65,3,4,15,12};
-    printf("max element of array is %d",Max(arr,0,5,0));
+    cout<<"Max Element :";
+    int a[]={5,6,8,1,2,18,78,10};
+    cout<<Max(a,0,7);
+
     return 0;
 }
